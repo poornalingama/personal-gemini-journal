@@ -1,0 +1,397 @@
+<section class="decisionlens-page">
+
+    <div class="section-title-row">
+
+        <div>
+
+            <div class="eyebrow">
+                DECISION INTELLIGENCE
+            </div>
+
+            <h2>
+                DecisionLens
+            </h2>
+
+            <p class="muted">
+                Think clearly, compare options,
+                act, and learn from outcomes.
+            </p>
+
+        </div>
+
+        <button
+            class="primary-button"
+            id="dl-new"
+            type="button">
+
+            + New Decision
+
+        </button>
+
+    </div>
+
+
+    <div class="dl-layout">
+
+
+        <aside class="dl-library panel">
+
+            <input
+                id="dl-search"
+                class="dl-input"
+                placeholder="Search decisions..."
+            >
+
+            <div
+                id="dl-list"
+                class="dl-list">
+            </div>
+
+        </aside>
+
+
+        <main class="dl-workspace">
+
+
+            <section
+                class="panel"
+                id="dl-editor">
+
+                <div class="eyebrow">
+                    DECISION WORKSPACE
+                </div>
+
+                <h3 id="dl-heading">
+                    Create a decision
+                </h3>
+
+
+                <input
+                    id="dl-id"
+                    type="hidden"
+                >
+
+
+                <label>
+                    Decision question
+
+                    <input
+                        id="dl-title"
+                        class="dl-input"
+                        placeholder="What decision are you trying to make?"
+                    >
+
+                </label>
+
+
+                <label>
+                    Context
+
+                    <textarea
+                        id="dl-context"
+                        class="dl-input"
+                        rows="5"
+                        placeholder="Situation, goals, constraints and what you know..."
+                    ></textarea>
+
+                </label>
+
+
+                <div class="dl-two">
+
+                    <label>
+                        Status
+
+                        <select
+                            id="dl-status"
+                            class="dl-input">
+
+                            <option value="open">
+                                Open
+                            </option>
+
+                            <option value="in_progress">
+                                In Progress
+                            </option>
+
+                            <option value="completed">
+                                Completed
+                            </option>
+
+                        </select>
+
+                    </label>
+
+
+                    <label>
+                        Priority
+
+                        <select
+                            id="dl-priority"
+                            class="dl-input">
+
+                            <option value="low">
+                                Low
+                            </option>
+
+                            <option
+                                value="medium"
+                                selected>
+
+                                Medium
+
+                            </option>
+
+                            <option value="high">
+                                High
+                            </option>
+
+                        </select>
+
+                    </label>
+
+                </div>
+
+
+                <label>
+                    Options
+
+                    <input
+                        id="dl-options"
+                        class="dl-input"
+                        placeholder="Option A, Option B, Option C"
+                    >
+
+                </label>
+
+
+                <label>
+                    Criteria / priorities
+
+                    <input
+                        id="dl-criteria"
+                        class="dl-input"
+                        placeholder="Cost, growth, stability, time..."
+                    >
+
+                </label>
+
+
+                <div class="dl-actions">
+
+                    <button
+                        class="primary-button"
+                        id="dl-save"
+                        type="button">
+
+                        Save &amp; Analyze
+
+                    </button>
+
+
+                    <button
+                        class="secondary-button"
+                        id="dl-agent"
+                        type="button">
+
+                        Run Decision Agent
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <section
+                class="panel"
+                id="dl-analysis"
+                hidden>
+
+                <div class="dl-result-head">
+
+                    <div>
+
+                        <div class="eyebrow">
+                            AI RECOMMENDATION
+                        </div>
+
+                        <h2 id="dl-recommendation">
+                            —
+                        </h2>
+
+                        <p id="dl-summary">
+                        </p>
+
+                    </div>
+
+
+                    <div class="dl-metrics">
+
+                        <strong id="dl-confidence">
+                            0%
+                        </strong>
+
+                        <span>
+                            Confidence
+                        </span>
+
+
+                        <strong id="dl-risk">
+                            —
+                        </strong>
+
+                        <span>
+                            Risk
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="dl-grid"
+                    id="dl-cards">
+                </div>
+
+            </section>
+
+
+            <section class="panel dl-tools">
+
+                <div class="eyebrow">
+                    DECISION TOOLS
+                </div>
+
+                <h3>
+                    Compare, learn and reflect
+                </h3>
+
+
+                <div class="dl-two">
+
+                    <select
+                        id="dl-a"
+                        class="dl-input">
+                    </select>
+
+
+                    <select
+                        id="dl-b"
+                        class="dl-input">
+                    </select>
+
+                </div>
+
+
+                <button
+                    class="secondary-button"
+                    id="dl-compare"
+                    type="button">
+
+                    Compare Decisions
+
+                </button>
+
+
+                <div
+                    id="dl-compare-result">
+                </div>
+
+
+                <hr>
+
+
+                <select
+                    id="dl-outcome-decision"
+                    class="dl-input">
+                </select>
+
+
+                <div class="dl-two">
+
+                    <select
+                        id="dl-outcome"
+                        class="dl-input">
+
+                        <option value="">
+                            Outcome
+                        </option>
+
+                        <option>
+                            Successful
+                        </option>
+
+                        <option>
+                            Partially Successful
+                        </option>
+
+                        <option>
+                            Unsuccessful
+                        </option>
+
+                        <option>
+                            Cancelled
+                        </option>
+
+                    </select>
+
+
+                    <input
+                        id="dl-outcome-result"
+                        class="dl-input"
+                        placeholder="What actually happened?"
+                    >
+
+                </div>
+
+
+                <button
+                    class="secondary-button"
+                    id="dl-record"
+                    type="button">
+
+                    Record Outcome
+
+                </button>
+
+
+                <button
+                    class="secondary-button"
+                    id="dl-prediction"
+                    type="button">
+
+                    Prediction vs Actual
+
+                </button>
+
+
+                <div
+                    id="dl-prediction-result">
+                </div>
+
+
+                <button
+                    class="secondary-button"
+                    id="dl-history"
+                    type="button">
+
+                    Decision Timeline
+
+                </button>
+
+
+                <div
+                    id="dl-history-result">
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</section>
+
+<script src="{{ url_for('static', filename='js/decision-intelligence-enhancements.js') }}"></script>

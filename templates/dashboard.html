@@ -1,0 +1,1983 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+>
+
+<title>Personal Gemini Journal</title>
+
+<link
+    rel="stylesheet"
+    href="/static/css/main.css"
+>
+
+<link
+    rel="stylesheet"
+    href="/static/css/dashboard.css"
+>
+
+<link
+    rel="stylesheet"
+    href="/static/css/decisionlens.css?v=20260902-clean"
+>
+
+<link
+    rel="stylesheet"
+    href="/static/css/responsive.css"
+>
+
+    <link rel="stylesheet" href="/static/css/decisionlens-final-polish.css">
+<link rel="stylesheet" href="/static/css/reference-pages-v2.css?v=20260903-reference">
+<link rel="stylesheet" href="/static/css/ui-refinement-v3.css?v=20260903-ai-insights-hotfix">
+
+<link rel="stylesheet" href="/static/css/ai-insights-polish.css?v=20260903-saved-ai">
+
+    <link
+        rel="stylesheet"
+        href="/static/css/ai-reference-ui.css?v=20260903-reference-ux"
+    >
+<link rel="stylesheet" href="/static/css/reference-pages-final.css?v=20260903-pages-final">
+<link rel="stylesheet" href="/static/css/journal-final-polish.css?v=20260903-journal-final-v2">
+    <link rel="stylesheet" href="/static/css/journal-reader-modal.css">
+
+<link rel="stylesheet" href="/static/css/pages-ux-fix.css?v=buttons-final">
+
+<link rel="stylesheet" href="/static/css/pages-ux-fix.css?v=20260903-rebuild">
+    <link rel="stylesheet" href="/static/css/journal-final-fix.css">
+    <link rel="stylesheet" href="/static/css/journal-approved-ux.css?v=20260903-approved">
+<link rel="stylesheet" href="/static/css/journal-only-ux.css?v=20260903-journal-clean">
+</head>
+
+
+<body>
+
+<div class="app-shell">
+
+    <!-- =====================================================
+         TOP BAR
+         ===================================================== -->
+
+    <header class="topbar">
+
+        <div class="brand-area">
+
+            <div class="brand-mark">
+                ✦
+            </div>
+
+            <div class="brand-copy">
+
+                <h1>
+                    Personal Gemini Journal
+                </h1>
+
+                <span>
+                    Your private AI thinking space
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="topbar-actions">
+
+            <div class="user-chip">
+
+                <div class="user-avatar">
+                    <span>U</span>
+                </div>
+
+                <div class="user-info">
+
+                    <strong>
+                        Personal Workspace
+                    </strong>
+
+                    <span id="user-email"></span>
+
+                </div>
+
+            </div>
+
+
+            <button
+                id="logout"
+                type="button"
+                class="logout-button">
+
+                Sign out
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         APPLICATION LAYOUT
+         ===================================================== -->
+
+    <div class="application-layout">
+
+
+        <!-- =================================================
+             SIDEBAR
+             ================================================= -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-heading">
+                WORKSPACE
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+                <button
+                    type="button"
+                    class="nav-item active"
+                    data-section="overview">
+
+                    <span class="nav-icon">⌂</span>
+                    <span>Overview</span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="nav-item"
+                    data-section="chat">
+
+                    <span class="nav-icon">✦</span>
+                    <span>Gemini Chat</span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="nav-item"
+                    data-section="journals">
+
+                    <span class="nav-icon">📔</span>
+                    <span>Journals</span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="nav-item"
+                    data-section="calendar">
+
+                    <span class="nav-icon">📅</span>
+                    <span>Calendar</span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="nav-item"
+                    data-section="goals">
+
+                    <span class="nav-icon">🎯</span>
+                    <span>Goals</span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="nav-item"
+                    data-section="analytics">
+
+                    <span class="nav-icon">▥</span>
+                    <span>Analytics</span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="nav-item"
+                    data-section="insights">
+
+                    <span class="nav-icon">💡</span>
+                    <span>AI Insights</span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="nav-item"
+                    data-section="decisionlens">
+
+                    <span class="nav-icon">⌕</span>
+                    <span>DecisionLens</span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="nav-item"
+                    data-section="bookmarks">
+
+                    <span class="nav-icon">🔖</span>
+                    <span>Bookmarks</span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="nav-item"
+                    data-section="search">
+
+                    <span class="nav-icon">⌕</span>
+                    <span>Search</span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="nav-item"
+                    data-section="summaries">
+
+                    <span class="nav-icon">▤</span>
+                    <span>Summaries</span>
+
+                </button>
+
+            </nav>
+
+
+            <div class="sidebar-footer">
+
+                <div class="privacy-card">
+
+                    <span class="privacy-icon">
+                        🔒
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Private workspace
+                        </strong>
+
+                        <p>
+                            Your data stays tied
+                            to your account.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =================================================
+             MAIN CONTENT
+             ================================================= -->
+
+        <main class="main-content">
+
+
+            <!-- =================================================
+                 OVERVIEW
+                 ================================================= -->
+
+            <section
+                id="overview"
+                class="section active">
+
+                <div class="page-header">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            PERSONAL WORKSPACE
+                        </span>
+
+                        <h2>
+                            Good to see you.
+                        </h2>
+
+                        <p>
+                            Capture your thoughts,
+                            understand your patterns,
+                            and make better decisions
+                            with Gemini.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="stats"
+                    class="overview-stats">
+                </div>
+
+
+                <div class="hero-panel">
+
+                    <div class="hero-content">
+
+                        <span class="hero-label">
+                            ✦ GEMINI
+                        </span>
+
+                        <h3>
+                            Turn your thoughts
+                            into useful insight.
+                        </h3>
+
+                        <p>
+                            Write freely in your journal,
+                            reflect with Gemini, track goals,
+                            and explore important decisions
+                            from one private workspace.
+                        </p>
+
+                        <div class="hero-actions">
+
+                            <button
+                                type="button"
+                                class="primary-button"
+                                data-section="journals">
+
+                                + Write in Journal
+
+                            </button>
+
+                            <button
+                                type="button"
+                                class="secondary-button"
+                                data-section="chat">
+
+                                Talk to Gemini
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="hero-orbit">
+
+                        <div class="orbit-large">
+                            <div class="orbit-small">
+                                ✦
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="section-heading-row">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            QUICK ACCESS
+                        </span>
+
+                        <h3>
+                            Your tools
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <div class="feature-grid">
+
+
+                    <article class="feature-card feature-card-purple">
+
+                        <div class="feature-icon">
+                            📔
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Journal
+                            </h3>
+
+                            <p>
+                                Capture thoughts and
+                                reflect on what matters.
+                            </p>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            data-section="journals">
+
+                            Open Journal →
+
+                        </button>
+
+                    </article>
+
+
+                    <article class="feature-card feature-card-blue">
+
+                        <div class="feature-icon">
+                            ✦
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Gemini Chat
+                            </h3>
+
+                            <p>
+                                Brainstorm, question,
+                                and think with Gemini.
+                            </p>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            data-section="chat">
+
+                            Open Chat →
+
+                        </button>
+
+                    </article>
+
+
+                    <article class="feature-card feature-card-green">
+
+                        <div class="feature-icon">
+                            🎯
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Goals
+                            </h3>
+
+                            <p>
+                                Turn intentions into
+                                trackable progress.
+                            </p>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            data-section="goals">
+
+                            View Goals →
+
+                        </button>
+
+                    </article>
+
+
+                    <article class="feature-card feature-card-orange">
+
+                        <div class="feature-icon">
+                            🔎
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                DecisionLens
+                            </h3>
+
+                            <p>
+                                Structure difficult
+                                decisions with AI.
+                            </p>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            data-section="decisionlens">
+
+                            Analyze →
+
+                        </button>
+
+                    </article>
+
+                </div>
+
+
+                <div class="overview-lower-grid">
+
+                    <div class="info-panel">
+
+                        <div class="panel-heading">
+
+                            <div>
+
+                                <span class="eyebrow">
+                                    REFLECTION
+                                </span>
+
+                                <h3>
+                                    Make space to think.
+                                </h3>
+
+                            </div>
+
+                            <span class="panel-symbol">
+                                ✦
+                            </span>
+
+                        </div>
+
+                        <p>
+                            Your journal is more than a
+                            collection of notes. It becomes
+                            a private source for reflection,
+                            patterns, decisions and growth.
+                        </p>
+
+                    </div>
+
+
+                    <div class="info-panel">
+
+                        <div class="panel-heading">
+
+                            <div>
+
+                                <span class="eyebrow">
+                                    AI ASSISTANCE
+                                </span>
+
+                                <h3>
+                                    Your ideas, enhanced.
+                                </h3>
+
+                            </div>
+
+                            <span class="panel-symbol">
+                                💡
+                            </span>
+
+                        </div>
+
+                        <p>
+                            Use Gemini analysis and insights
+                            when you want another perspective
+                            on your own thinking.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 JOURNALS
+                 ================================================= -->
+<section id="journals"
+         class="section journal-approved-page">
+
+    <div class="journal-approved-header">
+
+        <div>
+
+            <div class="journal-approved-title-row">
+                <h2>My Journal</h2>
+
+                <span class="journal-today-chip">
+                    ▣ Today
+                </span>
+            </div>
+
+            <p>
+                Capture thoughts, reflect on your day,
+                and turn ideas into meaningful next steps.
+            </p>
+
+        </div>
+
+        <div class="journal-approved-actions">
+
+            <button id="journal-new-entry"
+                    type="button"
+                    class="primary-button">
+                ＋ New Entry
+            </button>
+
+            <button type="button"
+                    class="journal-more-button"
+                    aria-label="More journal options">
+                •••
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="journal-approved-grid">
+
+        <div class="journal-approved-main">
+
+            <form id="journal-form"
+                  class="journal-create-card">
+
+                <input id="journal-id"
+                       type="hidden">
+
+                <div class="journal-create-header">
+
+                    <div class="journal-create-title">
+
+                        <div class="journal-create-icon">
+                            ✎
+                        </div>
+
+                        <strong>
+                            Create New Entry
+                        </strong>
+
+                    </div>
+
+                    <span class="journal-autosave">
+                        <i></i>
+                        Auto-save: On
+                    </span>
+
+                </div>
+
+                <input id="journal-title"
+                       type="text"
+                       class="journal-title-input"
+                       placeholder="Give this entry a title..."
+                       maxlength="200"
+                       autocomplete="off">
+
+                <textarea id="journal-content"
+                          placeholder="What's on your mind?"
+                          maxlength="50000"
+                          required></textarea>
+
+                <div class="journal-editor-actions">
+
+                    <button id="journal-analyze"
+                            type="button"
+                            class="journal-gemini-button">
+                        ✨ Analyze with Gemini
+                    </button>
+
+                    <div class="journal-save-actions">
+
+                        <button id="journal-cancel"
+                                type="button"
+                                class="secondary-button">
+                            Cancel
+                        </button>
+
+                        <button type="submit"
+                                class="primary-button">
+                            Save Entry
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <span id="journal-analysis-status"
+                      class="journal-analysis-status"></span>
+
+            </form>
+
+
+            <div class="journal-recent-header">
+
+                <h3>
+                    Recent Entries
+                </h3>
+
+                <div class="journal-recent-controls">
+
+                    <input id="journal-search"
+                           type="search"
+                           placeholder="Search entries"
+                           autocomplete="off"
+                           aria-label="Search journal entries">
+
+                </div>
+
+            </div>
+
+
+            <div id="journal-list"
+                 class="journal-entry-list"></div>
+
+
+            <div id="journal-empty"
+                 class="journal-empty-state"
+                 hidden>
+
+                <div class="journal-empty-icon">
+                    📖
+                </div>
+
+                <h3>
+                    Your journal starts here
+                </h3>
+
+                <p>
+                    Write down a thought, reflection,
+                    idea, or plan.
+                </p>
+
+                <button id="journal-empty-new"
+                        type="button"
+                        class="primary-button">
+                    Create your first entry
+                </button>
+
+            </div>
+
+
+            <div id="journal-count"
+                 class="journal-count"
+                 hidden>
+                0 entries
+            </div>
+
+        </div>
+
+
+        <aside class="journal-ai-sidebar">
+
+            <div class="journal-ai-heading">
+
+                <div class="journal-ai-heading-icon">
+                    ✦
+                </div>
+
+                <div>
+
+                    <h3>
+                        AI Insights
+                    </h3>
+
+                    <p>
+                        Powered by Gemini
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="journal-ai-tabs">
+
+                <button type="button"
+                        class="active"
+                        data-journal-tab="summary">
+                    Summary
+                </button>
+
+                <button type="button"
+                        data-journal-tab="takeaways">
+                    Key Takeaways
+                </button>
+
+                <button type="button"
+                        data-journal-tab="steps">
+                    Next Steps
+                </button>
+
+            </div>
+
+
+            <div class="journal-ai-summary-card"
+                 data-journal-insight="summary">
+
+                <h4>
+                    Entry Summary
+                </h4>
+
+                <p id="journal-ai-summary">
+                    Select an entry or analyze a saved
+                    entry to see its reflection here.
+                </p>
+
+                <h5>
+                    Themes
+                </h5>
+
+                <div id="journal-ai-themes"
+                     class="journal-theme-chips">
+
+                    <span class="journal-theme-empty">
+                        Your themes will appear here
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="journal-ai-side-card"
+                 data-journal-insight="takeaways"
+                 hidden>
+
+                <div class="journal-ai-card-title">
+
+                    <span>●</span>
+
+                    <h4>
+                        Key Takeaways
+                    </h4>
+
+                </div>
+
+                <ul id="journal-ai-takeaways">
+                    <li>
+                        Analyze an entry to surface key ideas.
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <div class="journal-ai-side-card"
+                 data-journal-insight="steps"
+                 hidden>
+
+                <div class="journal-ai-card-title">
+
+                    <span>➜</span>
+
+                    <h4>
+                        Suggested Next Steps
+                    </h4>
+
+                </div>
+
+                <ul id="journal-ai-steps">
+                    <li>
+                        Choose one practical next step.
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <div class="journal-ask-gemini">
+
+                <strong>
+                    Ask Gemini anything about this entry...
+                </strong>
+
+                <button id="journal-open-chat"
+                        type="button">
+                    ➜
+                </button>
+
+            </div>
+
+        </aside>
+
+    </div>
+
+</section>
+
+
+<!-- =================================================
+                 CALENDAR
+                 ================================================= -->
+            <section id="calendar"
+         class="section calendar-rebuild-page">
+
+    <div class="reference-page-top calendar-page-header">
+
+        <div>
+
+            <div class="reference-title-row">
+                <h2>Calendar</h2>
+            </div>
+
+            <p>
+                Plan your day and keep track of important moments.
+            </p>
+
+        </div>
+
+        <button id="calendar-add-event"
+                type="button"
+                class="primary-button">
+            ＋ Add Event
+        </button>
+
+    </div>
+
+
+    <div class="calendar-workspace">
+
+        <main class="calendar-board-card">
+
+            <div class="calendar-month-toolbar">
+
+                <button id="calendar-prev"
+                        type="button"
+                        class="calendar-nav-button"
+                        aria-label="Previous month">
+                    ‹
+                </button>
+
+                <button id="calendar-today"
+                        type="button"
+                        class="calendar-month-button">
+
+                    <span id="calendar-month-label">
+                        Calendar
+                    </span>
+
+                </button>
+
+                <button id="calendar-next"
+                        type="button"
+                        class="calendar-nav-button"
+                        aria-label="Next month">
+                    ›
+                </button>
+
+            </div>
+
+
+            <div class="calendar-grid-shell">
+
+                <div class="calendar-weekdays">
+                    <div>Sun</div>
+                    <div>Mon</div>
+                    <div>Tue</div>
+                    <div>Wed</div>
+                    <div>Thu</div>
+                    <div>Fri</div>
+                    <div>Sat</div>
+                </div>
+
+                <div id="calendar-month-grid"
+                     class="calendar-month-grid">
+                </div>
+
+            </div>
+
+        </main>
+
+
+        <aside class="calendar-right-panel">
+
+            <div class="calendar-side-card">
+
+                <div class="calendar-side-title">
+
+                    <span>✦</span>
+
+                    <div>
+                        <h3>AI Daily Insight</h3>
+
+                        <p>
+                            A simple view of your schedule.
+                        </p>
+                    </div>
+
+                </div>
+
+                <p id="calendar-assistant-text">
+                    Your schedule is open. Add your important
+                    events and protect time for what matters.
+                </p>
+
+            </div>
+
+
+            <div class="calendar-side-card calendar-upcoming-card">
+
+                <div class="calendar-card-heading">
+                    <h3>Upcoming</h3>
+                </div>
+
+                <div id="calendar-upcoming">
+                </div>
+
+            </div>
+
+        </aside>
+
+    </div>
+
+
+    <div id="calendar-modal"
+         class="app-modal"
+         hidden
+         aria-hidden="true">
+
+        <div class="app-modal-backdrop"
+             data-calendar-modal-close>
+        </div>
+
+
+        <div class="app-modal-dialog"
+             role="dialog"
+             aria-modal="true"
+             aria-labelledby="calendar-modal-title">
+
+            <div class="app-modal-header">
+
+                <div>
+
+                    <span class="modal-eyebrow">
+                        CALENDAR
+                    </span>
+
+                    <h2 id="calendar-modal-title">
+                        Add Event
+                    </h2>
+
+                </div>
+
+                <button type="button"
+                        class="app-modal-close"
+                        data-calendar-modal-close
+                        aria-label="Close">
+                    ×
+                </button>
+
+            </div>
+
+
+            <form id="calendar-form"
+                  class="calendar-modal-form">
+
+                <input id="calendar-event-id"
+                       type="hidden">
+
+                <label>
+
+                    <span>Event title</span>
+
+                    <input id="calendar-title"
+                           type="text"
+                           placeholder="What are you planning?"
+                           required>
+
+                </label>
+
+
+                <div class="calendar-form-row">
+
+                    <label>
+
+                        <span>Date</span>
+
+                        <input id="calendar-date"
+                               type="date"
+                               required>
+
+                    </label>
+
+
+                    <label>
+
+                        <span>Time</span>
+
+                        <input id="calendar-time"
+                               type="time">
+
+                    </label>
+
+                </div>
+
+
+                <div class="app-modal-actions">
+
+                    <button id="calendar-delete-event"
+                            type="button"
+                            class="secondary-button"
+                            hidden>
+                        Delete
+                    </button>
+
+                    <span class="calendar-modal-spacer"></span>
+
+                    <button id="calendar-form-cancel"
+                            type="button"
+                            class="secondary-button">
+                        Cancel
+                    </button>
+
+                    <button id="calendar-form-submit"
+                            type="submit"
+                            class="primary-button">
+                        Add Event
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- Compatibility containers for old code -->
+    <div id="calendar-date-strip" hidden></div>
+    <div id="agenda-events" hidden></div>
+    <div id="agenda-selected-date" hidden></div>
+    <div id="agenda-selected-subtitle" hidden></div>
+    <div id="reference-calendar-grid" hidden></div>
+    <div id="calendar-list" hidden></div>
+    <button id="agenda-add-event" type="button" hidden></button>
+    <button id="calendar-optimize" type="button" hidden></button>
+    <button id="calendar-view-all" type="button" hidden></button>
+
+</section>
+
+
+<!-- =================================================
+                 GOALS
+                 ================================================= -->
+            <section id="goals" class="section reference-goals-page">
+                <div class="reference-page-top"><div><div class="reference-title-row"><span class="page-icon">◎</span><h2>Goals</h2></div><p>Set meaningful goals and track your progress every day.</p></div><div class="reference-header-actions"><button id="goal-new-button" type="button" class="primary-button">＋ New Goal</button></div></div>
+                <div class="reference-goals-layout"><div class="goals-main"><div id="goal-stats" class="goal-stat-grid"></div><div class="goals-tabs"><button class="active" type="button" data-goal-filter="all">All Goals</button><button type="button" data-goal-filter="active">Active</button><button type="button" data-goal-filter="completed">Completed</button></div><div id="goal-list" class="reference-goal-list"></div><div class="goal-pro-tip"><strong>💡 Pro Tip</strong><span>Break your goals into smaller tasks and review them regularly. Small steps every day lead to big achievements!</span></div></div><aside class="goals-right"><div class="goal-side-card"><div class="journal-ai-title"><span>✦</span><div><h3>AI Goal Insights</h3><p>Powered by Gemini</p></div></div><div class="goal-insight-box"><h4>Today's Insight</h4><p id="goal-insight-text">Create a few goals to receive a progress reflection.</p><h4>Suggested Focus</h4><ul id="goal-suggested-focus"><li>Choose one meaningful next step.</li></ul></div></div><div class="goal-side-card"><h3>Goal Progress</h3><div class="goal-progress-ring"><strong id="goal-progress-number">0%</strong><span>Overall</span></div><div id="goal-progress-breakdown"></div></div><div class="goal-side-card"><h3>Quick Actions</h3><button id="quick-goal-new" type="button">＋ Add new goal</button><button id="quick-goal-review" type="button">☑ Review all tasks</button><button id="quick-goal-roadmap" type="button">▤ View goal roadmap</button></div></aside></div>
+                
+            </section>
+
+            <!-- =================================================
+                 ANALYTICS
+                 ================================================= -->
+
+            <section
+                id="analytics"
+                class="section">
+
+                <div class="page-header">
+
+                    <span class="eyebrow">
+                        YOUR DATA
+                    </span>
+
+                    <h2>
+                        📊 Analytics
+                    </h2>
+
+                    <p>
+                        A simple view of activity across
+                        your personal workspace.
+                    </p>
+
+                </div>
+
+
+                <div
+                    id="analytics-data"
+                    class="analytics-grid">
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 INSIGHTS
+                 ================================================= -->
+
+            <section
+                id="insights"
+                class="section">
+
+                <div class="page-header">
+
+                    <span class="eyebrow">
+                        GEMINI
+                    </span>
+
+                    <h2>
+                        💡 AI Insights
+                    </h2>
+
+                    <p>
+                        Ask Gemini to reflect across
+                        your journal entries.
+                    </p>
+
+                </div>
+
+
+                <div class="ai-action-panel">
+
+                    <div>
+
+                        <div class="ai-panel-icon">
+                            ✦
+                        </div>
+
+                        <h3>
+                            Discover patterns in your thinking
+                        </h3>
+
+                        <p>
+                            Gemini can look across your
+                            journal and surface useful
+                            themes and reflections.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        id="generate-insight"
+                        type="button"
+                        class="primary-button">
+
+                        Generate insights from my journal
+
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="insight-output"
+                    class="panel ai-output">
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 DECISIONLENS
+                 ================================================= -->
+
+
+            <section id="decisionlens" class="section decisionlens-section">
+                <div class="dl-page-top">
+                    <button
+                        type="button"
+                        class="dl-back-home"
+                        id="decision-back-home"
+                    >
+                        ← Back to Home
+                    </button>
+                </div>
+    
+
+                <div class="dl-tabs" role="tablist">
+                    <button type="button" class="dl-tab active" data-dl-tab="decisions">My Decisions</button>
+                    <button type="button" class="dl-tab" data-dl-tab="compare">Decision Comparer</button>
+                    <button type="button" class="dl-tab" data-dl-tab="history">Decision History</button>
+                    <button type="button" class="dl-tab" data-dl-tab="outcomes">Outcome Tracker</button>
+                    <button type="button" class="dl-tab" data-dl-tab="agent">Decision Agent</button>
+                </div>
+
+                <div id="dl-workspace" class="dl-workspace dl-final-workspace">
+
+                    <aside class="dl-library">
+
+                        <button
+                                                    type="button"
+                                                    id="decision-new"
+                                                    class="primary-button dl-new-decision-button dl-rail-new-decision"
+                                                >
+                                                    ＋ New Decision
+                                                </button>
+
+                        <div class="dl-library-head">
+                            <div>
+                                <strong>My Decisions</strong>
+                                <span>Select a decision to continue.</span>
+                            </div>
+                            <select id="decision-filter" aria-label="Filter decisions">
+                                <option value="all">All Status</option>
+                            </select>
+                        </div>
+
+                        <input id="decision-search" class="dl-search" type="search" placeholder="⌕ Search decisions...">
+                        <div id="decision-list" class="dl-decision-list"></div>
+                    </aside>
+
+                    <section class="dl-editor dl-final-editor">
+
+                        <div class="dl-decision-hero">
+                            <div class="dl-decision-hero-main">
+
+                                <span class="eyebrow">ACTIVE DECISION</span>
+
+                                <h3 id="decision-active-title">New Decision</h3>
+
+                                <div class="dl-decision-meta">
+
+                                    <span
+                                        id="decision-status"
+                                        class="dl-status">
+                                        Draft
+                                    </span>
+
+                                    <span
+                                        id="decision-created"
+                                        class="dl-decision-date">
+                                    </span>
+
+                                    <span
+                                        class="dl-date-separator"
+                                        aria-hidden="true">
+                                        •
+                                    </span>
+
+                                    <span
+                                        id="decision-updated"
+                                        class="dl-decision-date">
+                                    </span>
+
+                                    <div class="dl-header-actions">
+
+                                        <button
+                                            type="button"
+                                            class="ghost-button"
+                                            id="decision-edit-open">
+
+                                            <svg
+                                                aria-hidden="true"
+                                                viewBox="0 0 24 24"
+                                                width="16"
+                                                height="16"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round">
+
+                                                <path d="M12 20h9"/>
+                                                <path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/>
+
+                                            </svg>
+
+                                            <span>Edit</span>
+
+                                        </button>
+
+                                        <button
+                                            type="submit"
+                                            form="decision-form"
+                                            class="primary-button"
+                                            id="decision-analyze">
+
+                                            <span aria-hidden="true">✦</span>
+                                            <span>Analyze with AI</span>
+
+                                        </button>
+
+                                        <button
+                                            type="button"
+                                            class="ghost-button danger-button"
+                                            id="decision-delete">
+
+                                            <svg
+                                                aria-hidden="true"
+                                                viewBox="0 0 24 24"
+                                                width="16"
+                                                height="16"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round">
+
+                                                <path d="M3 6h18"/>
+                                                <path d="M8 6V4h8v2"/>
+                                                <path d="M19 6l-1 14H6L5 6"/>
+                                                <path d="M10 11v5"/>
+                                                <path d="M14 11v5"/>
+
+                                            </svg>
+
+                                            <span>Delete</span>
+
+                                        </button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="dl-context-preview">
+                            <div class="dl-context-preview-head">
+                                <strong>Context &amp; Background</strong>
+                                <button type="button" class="ghost-button dl-context-edit" id="decision-context-edit">Edit</button>
+                            </div>
+                            <p id="decision-context-preview">Add context, constraints, alternatives and concerns.</p>
+                        </div>
+
+                        
+
+
+                        <div id="decision-empty-editor" class="dl-empty" hidden>
+                            Select a decision or create a new one.
+                        </div>
+
+<section class="dl-decision-tools" aria-label="Decision tools">
+    <div class="dl-tools-heading">
+        <h3>Decision Intelligence</h3>
+    </div>
+
+    <div class="dl-tools-grid">
+        <button type="button" class="dl-tool-card" data-dl-tool="compare">
+            <span class="dl-tool-icon">⇄</span>
+            <span class="dl-tool-copy">
+                <strong>Decision Comparer</strong>
+                <small>Compare options and decisions</small>
+            </span>
+        </button>
+
+        <button type="button" class="dl-tool-card" data-dl-tool="history">
+            <span class="dl-tool-icon">◷</span>
+            <span class="dl-tool-copy">
+                <strong>Decision History</strong>
+                <small>Review changes and decisions</small>
+            </span>
+        </button>
+
+        <button type="button" class="dl-tool-card" data-dl-tool="outcomes">
+            <span class="dl-tool-icon">↗</span>
+            <span class="dl-tool-copy">
+                <strong>Outcome Tracker</strong>
+                <small>Track real-world results</small>
+            </span>
+        </button>
+
+        <button type="button" class="dl-tool-card" data-dl-tool="agent">
+            <span class="dl-tool-icon">✦</span>
+            <span class="dl-tool-copy">
+                <strong>Decision Agent</strong>
+                <small>Run AI decision intelligence</small>
+            </span>
+        </button>
+    </div>
+</section>
+
+<section class="dl-timeline-panel dl-final-timeline-panel"
+                         id="decision-evolution-panel">
+
+                    <div class="dl-timeline-head">
+                        <div>
+                            <span class="eyebrow">DECISION PROGRESS</span>
+                            <h3>Track how this decision evolves</h3>
+                        </div>
+                    </div>
+
+                    <div id="decision-timeline"
+                         class="dl-timeline"
+                         aria-label="Decision progress timeline"></div>
+
+                </section>
+
+<div class="dl-detail-tabs" id="dl-detail-tabs">
+                            <button type="button" class="active" data-detail="workspace">Workspace</button>
+                            <button type="button" data-detail="analysis">Analysis</button>
+                            <button type="button" data-detail="agent">Agent Insights</button>
+                            <button type="button" data-detail="actions">Actions</button>
+                            <button type="button" data-detail="outcome">Outcome</button>
+                        </div>
+
+                        <div id="dl-detail-content" class="dl-detail-content"></div>
+                    </section>
+
+                    <aside class="dl-ai-panel dl-reference-rail">
+
+                        
+
+                        <section
+                            class="dl-quick-actions"
+                            aria-label="Quick Actions"
+                        >
+
+                            <h3>Quick Actions</h3>
+
+                            <button
+                                type="button"
+                                id="dl-quick-add-action"
+                            >
+                                <span>⊕</span>
+                                Add Action
+                            </button>
+
+                            <button
+                                type="button"
+                                id="dl-quick-add-outcome"
+                            >
+                                <span>◎</span>
+                                Add Outcome
+                            </button>
+
+                            <button
+                                type="button"
+                                id="dl-quick-rerun"
+                            >
+                                <span>↻</span>
+                                Re-run Agent
+                            </button>
+
+                            <button
+                                type="button"
+                                id="dl-quick-share"
+                            >
+                                <span>↗</span>
+                                Share Decision
+                            </button>
+
+                            <button
+                                type="button"
+                                id="dl-quick-export"
+                            >
+                                <span>⇩</span>
+                                Export Decision
+                            </button>
+
+                        </section>
+
+                        
+                        <section
+                            class="dl-reference-card dl-decision-snapshot"
+                        >
+
+                            <h3>
+                                Decision Snapshot
+                            </h3>
+
+                            <div
+                                id="dl-reference-snapshot"
+                            ></div>
+
+                        </section>
+
+
+                        <section
+                            class="dl-reference-card dl-outcome-summary"
+                        >
+
+                            <h3>
+                                Outcome Summary
+                            </h3>
+
+                            <div
+                                id="dl-reference-outcome"
+                            ></div>
+
+                            <button
+                                type="button"
+                                class="primary-button dl-reference-outcome-button"
+                                id="dl-reference-open-outcome"
+                            >
+                                Save Outcome
+                            </button>
+
+                        </section>
+
+
+                        <!--
+                            Hidden only visually.
+                            Existing decisionlens.js continues
+                            to render AI content here.
+                        -->
+                        <div
+                            id="decision-ai-content"
+                            class="dl-ai-content dl-ai-content-hidden"
+                            hidden
+                            aria-hidden="true"
+                        ></div>
+
+
+                    </aside>
+
+                </div>
+
+                
+
+                <div id="decision-output" class="dl-hidden-output" aria-live="polite"></div>
+
+                <div id="decision-modal" class="dl-modal" hidden aria-hidden="true">
+                    <div class="dl-modal-backdrop" data-decision-modal-close></div>
+
+                    <div class="dl-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="decision-modal-title">
+                        <div class="dl-modal-head">
+                            <div>
+                                <span class="eyebrow">DECISION</span>
+                                <h3 id="decision-modal-title">Create Decision</h3>
+                            </div>
+                            <button type="button" class="dl-icon-button" data-decision-modal-close aria-label="Close">×</button>
+                        </div>
+
+                        <form id="decision-form" class="dl-form">
+                            <label>
+                                <span>Decision</span>
+                                <input id="decision-title" required placeholder="What decision are you considering?">
+                            </label>
+
+                            <label>
+                                <span>Context &amp; Background</span>
+                                <textarea id="decision-context" rows="8" placeholder="Add context, constraints, alternatives and concerns..."></textarea>
+                            </label>
+
+                            <div class="dl-decision-options">
+                                <span>What are you comparing?</span>
+
+                                <label>
+                                    <span>Option 1</span>
+                                    <input
+                                        id="decision-option-1"
+                                        placeholder="What is your first option?"
+                                    >
+                                </label>
+
+                                <label>
+                                    <span>Option 2</span>
+                                    <input
+                                        id="decision-option-2"
+                                        placeholder="What do you want to compare it with?"
+                                    >
+                                </label>
+                            </div>
+
+                            <div class="dl-modal-actions">
+                                <button type="button" class="secondary-button" data-decision-modal-close>Cancel</button>
+                                <button type="button" class="secondary-button" id="decision-save">Save</button>
+                                <button type="submit" class="primary-button">✦ Analyze with AI</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- =================================================
+                 BOOKMARKS
+                 ================================================= -->
+
+            <section
+                id="bookmarks"
+                class="section">
+
+                <div class="page-header">
+
+                    <span class="eyebrow">
+                        SAVED THOUGHTS
+                    </span>
+
+                    <h2>
+                        🔖 Bookmarks
+                    </h2>
+
+                    <p>
+                        Keep important thoughts and ideas
+                        close at hand.
+                    </p>
+
+                </div>
+
+
+                <form
+                    id="bookmark-form"
+                    class="panel form-panel">
+
+                    <div class="form-panel-heading">
+
+                        <div>
+
+                            <h3>
+                                Save a thought
+                            </h3>
+
+                            <p>
+                                Store something worth returning to.
+                            </p>
+
+                        </div>
+
+                        <span>🔖</span>
+
+                    </div>
+
+
+                    <input
+                        id="bookmark-title"
+                        placeholder="Bookmark title"
+                    >
+
+
+                    <textarea
+                        id="bookmark-content"
+                        placeholder="Save an important thought..."
+                    ></textarea>
+
+
+                    <button
+                        type="submit"
+                        class="primary-button">
+
+                        Save Bookmark
+
+                    </button>
+
+                </form>
+
+
+                <div
+                    id="bookmark-list"
+                    class="feature-list">
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 SEARCH
+                 ================================================= -->
+
+            <section
+                id="search"
+                class="section">
+
+                <div class="page-header">
+
+                    <span class="eyebrow">
+                        PRIVATE SEARCH
+                    </span>
+
+                    <h2>
+                        🔍 Search
+                    </h2>
+
+                    <p>
+                        Search across your private workspace.
+                    </p>
+
+                </div>
+
+
+                <form
+                    id="search-form"
+                    class="search-panel">
+
+                    <input
+                        id="search-input"
+                        placeholder="Search your private data..."
+                        autocomplete="off"
+                    >
+
+                    <button
+                        type="submit"
+                        class="primary-button">
+
+                        Search
+
+                    </button>
+
+                </form>
+
+
+                <div
+                    id="search-results"
+                    class="feature-list">
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 SUMMARIES
+                 ================================================= -->
+
+            <section
+                id="summaries"
+                class="section">
+
+                <div class="page-header">
+
+                    <span class="eyebrow">
+                        GEMINI
+                    </span>
+
+                    <h2>
+                        📝 Summaries
+                    </h2>
+
+                    <p>
+                        Turn your journal into a concise
+                        reflection.
+                    </p>
+
+                </div>
+
+
+                <div class="ai-action-panel">
+
+                    <div>
+
+                        <div class="ai-panel-icon">
+                            📝
+                        </div>
+
+                        <h3>
+                            Generate a journal summary
+                        </h3>
+
+                        <p>
+                            Gemini will create a concise
+                            summary from your journal content.
+                        </p>
+
+                    </div>
+
+                    <form
+                        id="summary-form">
+
+                        <button
+                            type="submit"
+                            class="primary-button">
+
+                            Generate Summary
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+
+                <div
+                    id="summary-output"
+                    class="panel ai-output">
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</div>
+
+
+
+
+<!-- CALENDAR EVENT MODAL -->
+
+<div id="goal-modal" class="app-modal" hidden aria-hidden="true">
+    <div class="app-modal-backdrop" data-goal-modal-close></div>
+
+    <div class="app-modal-dialog"
+         role="dialog"
+         aria-modal="true"
+         aria-labelledby="goal-modal-title">
+
+        <div class="app-modal-header">
+
+            <div>
+                <span class="modal-eyebrow">GOALS</span>
+                <h2 id="goal-modal-title">Create New Goal</h2>
+            </div>
+
+            <button type="button"
+                    class="app-modal-close"
+                    data-goal-modal-close
+                    aria-label="Close">
+                ×
+            </button>
+
+        </div>
+
+        <form id="goal-form" class="goal-modal-form">
+
+            <label>
+                <span>Your goal</span>
+                <input id="goal-title"
+                       type="text"
+                       placeholder="What do you want to achieve?"
+                       required>
+            </label>
+
+            <div class="app-modal-actions">
+
+                <button id="goal-form-cancel"
+                        type="button"
+                        class="secondary-button">
+                    Cancel
+                </button>
+
+                <button type="submit"
+                        class="primary-button">
+                    Add Goal
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
+
+
+<!-- FEATURE SCRIPTS LOADED AFTER ALL MODALS -->
+<script
+    type="module"
+    src="/static/js/app.js">
+</script>
+
+<!-- =========================================================
+     FEATURE MODULES
+     ========================================================= -->
+
+<script src="/static/js/journals.js?v=20260903-reference-pages"></script>
+<script src="/static/js/calendar.js?v=20260903-clean-rebuild"></script>
+<script src="/static/js/goals.js?v=20260903-modal-reset-fix"></script>
+<script src="/static/js/analytics.js"></script>
+<script src="/static/js/insights.js?v=20260903-reference-ux"></script>
+<script src="/static/js/decisionlens.js?v=20260902-layoutfix"></script>
+<script src="/static/js/decisionlens-reference-ui.js?v=20260902-layoutfix"></script>
+<script src="/static/js/decision-intelligence-enhancements.js?v=20260903-intelligence"></script>
+<script src="/static/js/bookmarks.js"></script>
+<script src="/static/js/search.js"></script>
+<script src="/static/js/summaries.js?v=20260903-reference-ux"></script>
+<script src="/static/js/ui-refinement-v3.js?v=20260903-ai-insights-hotfix"></script>
+</body>
+</html>

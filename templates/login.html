@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Personal Gemini Journal</title>
+
+    <link
+        rel="stylesheet"
+        href="/static/css/auth.css"
+    >
+
+</head>
+
+<body class="auth-page">
+
+    <main class="auth-shell">
+
+        <!-- BRAND -->
+
+        <header class="auth-brand">
+
+            <div class="auth-brand-mark">
+                ✦
+            </div>
+
+            <div>
+                <h1>
+                    Personal <span>Gemini</span> Journal
+                </h1>
+
+                <p>
+                    Your private AI thinking space
+                </p>
+            </div>
+
+        </header>
+
+
+        <section class="auth-layout">
+
+
+            <!-- LEFT PANEL -->
+
+            <section class="auth-intro">
+
+                <div class="journal-illustration">
+
+                    <div class="journal-book">
+
+                        <div class="journal-star">
+                            ✦
+                        </div>
+
+                    </div>
+
+                    <div class="journal-pen">
+                        ◇
+                    </div>
+
+                </div>
+
+
+                <div class="intro-copy">
+
+                    <div class="eyebrow">
+                        PERSONAL AI WORKSPACE
+                    </div>
+
+                    <h2>
+                        Your thoughts.<br>
+                        Organized.<br>
+                        <span>Empowered by AI.</span>
+                    </h2>
+
+                    <p>
+                        Capture your ideas, reflect on your day,
+                        and turn your thoughts into meaningful action.
+                    </p>
+
+                </div>
+
+
+                <div class="auth-features">
+
+                    <div class="auth-feature">
+
+                        <div class="feature-icon">
+                            📖
+                        </div>
+
+                        <div>
+                            <strong>Journals</strong>
+                            <span>
+                                Capture and reflect on your thoughts
+                            </span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="auth-feature">
+
+                        <div class="feature-icon">
+                            🎯
+                        </div>
+
+                        <div>
+                            <strong>Goals</strong>
+                            <span>
+                                Set goals and track your progress
+                            </span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="auth-feature">
+
+                        <div class="feature-icon">
+                            💡
+                        </div>
+
+                        <div>
+                            <strong>AI Insights</strong>
+                            <span>
+                                Discover patterns in your thinking
+                            </span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="auth-feature">
+
+                        <div class="feature-icon">
+                            🔎
+                        </div>
+
+                        <div>
+                            <strong>DecisionLens</strong>
+                            <span>
+                                Think through difficult choices
+                            </span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="auth-feature">
+
+                        <div class="feature-icon">
+                            🔖
+                        </div>
+
+                        <div>
+                            <strong>Bookmarks</strong>
+                            <span>
+                                Save what matters
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- LOGIN -->
+
+            <section class="auth-card">
+
+                <div class="auth-card-icon">
+                    ✦
+                </div>
+
+                <h2>
+                    Welcome back
+                </h2>
+
+                <p class="auth-card-subtitle">
+                    Login to continue your journey
+                </p>
+
+
+                <form id="login-form">
+
+
+                    <label for="login-email">
+                        Email
+                    </label>
+
+                    <div class="auth-input">
+
+                        <span>✉</span>
+
+                        <input
+                            id="login-email"
+                            type="email"
+                            placeholder="youremail@gmail.com"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <label for="login-password">
+                        Password
+                    </label>
+
+                    <div class="auth-input">
+
+                        <span>🔒</span>
+
+                        <input
+                            id="login-password"
+                            type="password"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            data-target="login-password"
+                            aria-label="Show password">
+                            ◉
+                        </button>
+
+                    </div>
+
+
+                    <div class="auth-row">
+
+                        <label class="remember-option">
+
+                            <input
+                                type="checkbox"
+                                id="remember-me"
+                                checked
+                            >
+
+                            <span>
+                                Remember me
+                            </span>
+
+                        </label>
+
+
+                        <button
+                            type="button"
+                            id="reset-password"
+                            class="forgot-button">
+
+                            Forgot password?
+
+                        </button>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="auth-primary-button">
+
+                        <span>↪</span>
+                        Login
+
+                    </button>
+
+                </form>
+
+
+                <div class="auth-divider">
+
+                    <span></span>
+
+                    <small>
+                        or continue with
+                    </small>
+
+                    <span></span>
+
+                </div>
+
+
+                <button
+                    id="google-login"
+                    type="button"
+                    class="social-button">
+
+                    <span class="google-icon">
+                        G
+                    </span>
+
+                    Continue with Google
+
+                </button>
+
+
+                <div class="auth-register-prompt">
+
+                    <span>
+                        Don't have an account?
+                    </span>
+
+                    <button
+                        type="button"
+                        id="open-register">
+
+                        Create account
+
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="auth-message"
+                    class="auth-message">
+                </div>
+
+
+                <div class="auth-security">
+
+                    🔒 Your conversations are private
+                    and securely stored.
+
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+
+    <!-- REGISTER MODAL -->
+
+    <div
+        id="register-modal"
+        class="register-modal"
+        hidden
+        aria-hidden="true">
+
+        <div
+            class="register-backdrop"
+            id="close-register-backdrop">
+        </div>
+
+
+        <section
+            class="register-dialog"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="register-title">
+
+
+            <button
+                type="button"
+                id="close-register"
+                class="register-close"
+                aria-label="Close registration">
+
+                ×
+
+            </button>
+
+
+            <div class="register-icon">
+                ✦
+            </div>
+
+
+            <h2 id="register-title">
+                Create your account
+            </h2>
+
+            <p class="register-subtitle">
+                Start your journaling journey
+            </p>
+
+
+            <form id="register-form">
+
+
+                <label for="register-name">
+                    Full Name
+                </label>
+
+                <div class="auth-input">
+
+                    <span>♙</span>
+
+                    <input
+                        id="register-name"
+                        type="text"
+                        placeholder="Enter your full name"
+                        autocomplete="name"
+                        required
+                    >
+
+                </div>
+
+
+                <label for="register-email">
+                    Email
+                </label>
+
+                <div class="auth-input">
+
+                    <span>✉</span>
+
+                    <input
+                        id="register-email"
+                        type="email"
+                        placeholder="youremail@gmail.com"
+                        autocomplete="email"
+                        required
+                    >
+
+                </div>
+
+
+                <label for="register-password">
+                    Password
+                </label>
+
+                <div class="auth-input">
+
+                    <span>🔒</span>
+
+                    <input
+                        id="register-password"
+                        type="password"
+                        placeholder="Create a strong password"
+                        minlength="6"
+                        autocomplete="new-password"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        class="password-toggle"
+                        data-target="register-password"
+                        aria-label="Show password">
+                        ◉
+                    </button>
+
+                </div>
+
+
+                <label for="register-password-confirm">
+                    Confirm Password
+                </label>
+
+                <div class="auth-input">
+
+                    <span>🔒</span>
+
+                    <input
+                        id="register-password-confirm"
+                        type="password"
+                        placeholder="Confirm your password"
+                        minlength="6"
+                        autocomplete="new-password"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        class="password-toggle"
+                        data-target="register-password-confirm"
+                        aria-label="Show password">
+                        ◉
+                    </button>
+
+                </div>
+
+
+                <label class="terms-option">
+
+                    <input
+                        type="checkbox"
+                        id="register-terms"
+                        required
+                    >
+
+                    <span>
+                        I agree to the
+                        <a href="#" onclick="return false;">
+                            Terms of Service
+                        </a>
+                        and
+                        <a href="#" onclick="return false;">
+                            Privacy Policy
+                        </a>
+                    </span>
+
+                </label>
+
+
+                <button
+                    type="submit"
+                    class="auth-primary-button">
+
+                    <span>♙</span>
+                    Create Account
+
+                </button>
+
+
+                <div class="auth-register-prompt modal-login-prompt">
+
+                    <span>
+                        Already have an account?
+                    </span>
+
+                    <button
+                        type="button"
+                        id="modal-login">
+
+                        Login
+
+                    </button>
+
+                </div>
+
+
+            </form>
+
+        </section>
+
+    </div>
+
+
+    <script
+        type="module"
+        src="/static/js/auth.js">
+    </script>
+
+</body>
+
+</html>

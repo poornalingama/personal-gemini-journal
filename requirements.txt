@@ -1,0 +1,10 @@
+Flask
+gunicorn
+google-genai
+google-cloud-firestore
+google-cloud-secret-manager
+firebase-admin
+google-auth
+python-dotenv
+pytest
+flask-cors

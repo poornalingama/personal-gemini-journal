@@ -1,0 +1,258 @@
+
+/* ============================================================
+   REFERENCE PAGE UPGRADES
+   ============================================================ */
+
+.reference-calendar-panel,
+.reference-decision-intelligence {
+    margin: 18px 0;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #e4e7ec;
+    border-radius: 14px;
+}
+
+.reference-calendar-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+.reference-calendar-head strong {
+    font-size: 18px;
+}
+
+.reference-calendar-nav,
+.reference-row-actions button,
+.reference-goal-controls button {
+    border: 1px solid #d8dde8;
+    background: #fff;
+    color: #344054;
+    border-radius: 8px;
+    padding: 7px 12px;
+    cursor: pointer;
+}
+
+.reference-calendar-weekdays,
+.reference-calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 7px;
+}
+
+.reference-calendar-weekdays {
+    margin-bottom: 8px;
+    color: #667085;
+    font-size: 12px;
+    text-align: center;
+}
+
+.reference-calendar-day,
+.reference-calendar-empty {
+    min-height: 68px;
+    border-radius: 10px;
+}
+
+.reference-calendar-day {
+    position: relative;
+    border: 1px solid transparent;
+    background: #f8f9fc;
+    color: #344054;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.reference-calendar-day:hover {
+    border-color: #6d5bd0;
+}
+
+.reference-calendar-day.today {
+    background: #5b45c9;
+    color: #fff;
+}
+
+.reference-calendar-day.has-event {
+    border-color: #a99de8;
+}
+
+.reference-calendar-day i {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #ef6b6b;
+    bottom: 9px;
+    left: calc(50% - 3px);
+}
+
+.reference-event-card,
+.reference-bookmark-card,
+.reference-goal-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 18px;
+    margin: 12px 0;
+    background: #fff;
+    border: 1px solid #e5e7ee;
+    border-radius: 12px;
+}
+
+.reference-event-card strong,
+.reference-bookmark-card strong {
+    display: block;
+    margin-bottom: 6px;
+}
+
+.reference-event-card span {
+    color: #667085;
+    font-size: 13px;
+}
+
+.reference-row-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.reference-goal-card {
+    display: block;
+}
+
+.reference-goal-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    margin-bottom: 12px;
+}
+
+.reference-goal-status {
+    color: #5b45c9;
+    font-weight: 800;
+    font-size: 13px;
+}
+
+.reference-progress {
+    height: 8px;
+    overflow: hidden;
+    border-radius: 99px;
+    background: #eceff4;
+    margin-bottom: 14px;
+}
+
+.reference-progress span {
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, #5b45c9, #7b68ee);
+}
+
+.reference-goal-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.reference-goal-controls input {
+    flex: 1;
+}
+
+.reference-analytics-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 16px;
+}
+
+.reference-analytics-summary article {
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #e5e7ee;
+    border-radius: 14px;
+}
+
+.reference-analytics-summary span {
+    display: block;
+    text-transform: capitalize;
+    color: #667085;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.reference-analytics-summary strong {
+    font-size: 28px;
+    color: #2f2a55;
+}
+
+.reference-insight-card {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    padding: 16px;
+    margin: 10px 0;
+    background: #fff;
+    border: 1px solid #e5e7ee;
+    border-radius: 12px;
+}
+
+.reference-insight-card span {
+    color: #5b45c9;
+    font-weight: 800;
+}
+
+.reference-insight-card p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+.reference-decision-intelligence {
+    background:
+        linear-gradient(
+            135deg,
+            #faf9ff,
+            #ffffff
+        );
+}
+
+.reference-decision-intelligence strong {
+    display: block;
+    margin-bottom: 8px;
+    color: #4d3bb7;
+}
+
+.reference-decision-intelligence p {
+    margin: 0;
+    color: #667085;
+    line-height: 1.6;
+}
+
+.reference-empty {
+    padding: 28px;
+    text-align: center;
+    color: #667085;
+    background: #fff;
+    border: 1px dashed #d7dce5;
+    border-radius: 12px;
+}
+
+@media (max-width: 720px) {
+
+    .reference-calendar-day {
+        min-height: 48px;
+    }
+
+    .reference-event-card,
+    .reference-bookmark-card {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .reference-goal-controls {
+        flex-wrap: wrap;
+    }
+
+    .reference-goal-controls input {
+        width: 100%;
+        flex-basis: 100%;
+    }
+}

@@ -1,0 +1,66 @@
+/*
+ * ============================================================
+ * JOURNAL FINAL FIX
+ * Scope: Journal page only
+ * ============================================================
+ */
+
+/*
+ * Prevent the old empty reader/detail area from taking
+ * unnecessary centre space.
+ */
+#journals .journal-reader:empty,
+#journals .journal-detail:empty,
+#journals .journal-viewer:empty,
+#journals .entry-reader:empty,
+#journal .journal-reader:empty,
+#journal .journal-detail:empty,
+#journal .journal-viewer:empty,
+#journal .entry-reader:empty {
+    display: none !important;
+}
+
+/*
+ * Ensure the Journal page can use available width without
+ * affecting other pages.
+ */
+#journals,
+#journal,
+.journal-page,
+.journals-page {
+    min-width: 0;
+}
+
+/*
+ * Prevent Journal content from creating horizontal overflow.
+ */
+#journals *,
+#journal *,
+.journal-page *,
+.journals-page * {
+    min-width: 0;
+}
+
+/*
+ * Responsive safety.
+ */
+@media (max-width: 1100px) {
+
+    #journals,
+    #journal,
+    .journal-page,
+    .journals-page {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 800px) {
+
+    #journals,
+    #journal,
+    .journal-page,
+    .journals-page {
+        overflow-x: hidden;
+    }
+}

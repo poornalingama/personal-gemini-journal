@@ -1,0 +1,14 @@
+{
+  "firestore": {
+    "rules": "firestore.rules"
+  },
+  "auth": {
+    "providers": {
+      "emailPassword": true,
+      "googleSignIn": {
+        "oAuthBrandDisplayName": "Personal Gemini Journal",
+        "supportEmail": "apoornalingam@gmail.com"
+      }
+    }
+  }
+}

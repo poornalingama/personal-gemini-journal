@@ -1,0 +1,297 @@
+/* ============================================================
+   UI REFINEMENT V3 — RESPONSIVE ANALYTICS + CLEAN AI INSIGHTS
+   ============================================================ */
+
+.pgj-analytics-shell {
+    display: grid;
+    gap: 18px;
+}
+
+.pgj-analytics-top,
+.pgj-chart-card,
+.pgj-metric-detail {
+    background: #fff;
+    border: 1px solid #e4e7ec;
+    border-radius: 16px;
+}
+
+.pgj-analytics-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 24px;
+}
+
+.pgj-kicker {
+    display: inline-block;
+    margin-bottom: 7px;
+    color: #5b45c9;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .12em;
+}
+
+.pgj-analytics-summary h3,
+.pgj-chart-head h3,
+.pgj-insights-header h3 {
+    margin: 0 0 8px;
+    color: #273043;
+}
+
+.pgj-analytics-summary p,
+.pgj-insights-header p,
+.pgj-metric-detail p {
+    margin: 0;
+    color: #667085;
+    line-height: 1.6;
+}
+
+.pgj-analytics-total {
+    min-width: 120px;
+    text-align: center;
+    padding: 16px;
+    border-radius: 14px;
+    background: #f7f6ff;
+}
+
+.pgj-analytics-total strong {
+    display: block;
+    color: #4d3bb7;
+    font-size: 34px;
+}
+
+.pgj-analytics-total span {
+    color: #667085;
+    font-size: 12px;
+}
+
+.pgj-chart-card {
+    padding: 24px;
+}
+
+.pgj-chart-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.pgj-chart-head > span {
+    color: #667085;
+    font-size: 12px;
+}
+
+.pgj-bar-chart {
+    min-height: 270px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(110px, 1fr));
+    align-items: end;
+    gap: 18px;
+    padding-top: 12px;
+    border-bottom: 1px solid #e4e7ec;
+}
+
+.pgj-chart-item {
+    min-height: 250px;
+    display: grid;
+    grid-template-rows: 1fr auto auto;
+    gap: 8px;
+    border: 0;
+    background: transparent;
+    color: #273043;
+    cursor: pointer;
+    text-align: center;
+    padding: 8px;
+    border-radius: 12px;
+}
+
+.pgj-chart-item:hover,
+.pgj-chart-item.is-selected {
+    background: #f7f6ff;
+}
+
+.pgj-bar-wrap {
+    min-height: 150px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.pgj-bar-wrap i {
+    width: min(64px, 70%);
+    min-height: 10px;
+    display: block;
+    border-radius: 12px 12px 3px 3px;
+    background: linear-gradient(180deg, #7b68ee, #5b45c9);
+    transition: height .2s ease;
+}
+
+.pgj-chart-item strong {
+    font-size: 22px;
+    color: #4d3bb7;
+}
+
+.pgj-chart-item small {
+    min-height: 32px;
+    color: #667085;
+    font-size: 12px;
+}
+
+.pgj-metric-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 14px;
+}
+
+.pgj-metric-card {
+    min-height: 145px;
+    padding: 18px;
+    border: 1px solid #e4e7ec;
+    border-radius: 14px;
+    background: #fff;
+    text-align: left;
+    cursor: pointer;
+}
+
+.pgj-metric-card:hover,
+.pgj-metric-card.is-selected {
+    border-color: #7b68ee;
+    box-shadow: 0 8px 20px rgba(91, 69, 201, .08);
+}
+
+.pgj-metric-card span,
+.pgj-metric-card small {
+    display: block;
+    color: #667085;
+}
+
+.pgj-metric-card strong {
+    display: block;
+    margin: 12px 0;
+    color: #273043;
+    font-size: 30px;
+}
+
+.pgj-metric-card small {
+    color: #5b45c9;
+    font-weight: 700;
+}
+
+.pgj-metric-detail {
+    padding: 20px 24px;
+}
+
+.pgj-metric-detail strong {
+    display: block;
+    margin: 4px 0 8px;
+    color: #273043;
+    font-size: 18px;
+}
+
+/* Remove the oversized empty-card look from the previous Insights treatment. */
+#insight-output {
+    display: grid;
+    gap: 12px;
+}
+
+#insight-output .reference-insight-card {
+    min-height: auto;
+    margin: 0;
+    padding: 14px 16px;
+}
+
+.pgj-insights-header {
+    padding: 8px 2px 6px;
+}
+
+.pgj-insights-list {
+    display: grid;
+    gap: 10px;
+}
+
+.pgj-insight-row {
+    display: grid;
+    grid-template-columns: 34px 1fr;
+    gap: 14px;
+    align-items: start;
+    padding: 16px;
+    border: 1px solid #e4e7ec;
+    border-radius: 14px;
+    background: #fff;
+}
+
+.pgj-insight-row > span {
+    width: 30px;
+    height: 30px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #f1efff;
+    color: #5b45c9;
+    font-weight: 800;
+    font-size: 13px;
+}
+
+.pgj-insight-row p {
+    margin: 3px 0 0;
+    color: #475467;
+    line-height: 1.65;
+}
+
+@media (max-width: 900px) {
+    .pgj-analytics-top {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .pgj-analytics-total {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 620px) {
+    .pgj-chart-card,
+    .pgj-analytics-top {
+        padding: 18px;
+    }
+
+    .pgj-bar-chart {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .pgj-chart-item {
+        min-height: 210px;
+    }
+
+    .pgj-metric-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ============================================================
+   AI INSIGHTS HOTFIX
+   The generator controls its own DOM. Styling must never rewrite
+   generated content while it is streaming or rendering.
+   ============================================================ */
+
+#insight-output[data-pgj-v3-safe="1"] {
+    display: grid;
+    gap: 12px;
+}
+
+#insight-output[data-pgj-v3-safe="1"] .reference-insight-card {
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 16px 18px !important;
+    overflow: visible !important;
+}
+
+#insight-output[data-pgj-v3-safe="1"] .reference-insight-card * {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+}
+

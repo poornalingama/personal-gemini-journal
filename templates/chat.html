@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Chat with Gemini in My Journal</title>
+
+<link rel="stylesheet"
+      href="/static/css/chat.css?v=chat-history-layout-20260903">
+</head>
+
+<body class="chat-page">
+
+<div class="chat-shell">
+
+    <!-- GLOBAL APPLICATION SIDEBAR -->
+
+    <!-- =====================================================
+         GLOBAL APPLICATION SIDEBAR
+         Matches the main application navigation
+         ===================================================== -->
+
+
+    <!-- =====================================================
+         GLOBAL APPLICATION SIDEBAR
+         Matches the main application navigation
+         ===================================================== -->
+
+    
+    <!-- MAIN APPLICATION SIDEBAR -->
+    <aside class="sidebar chat-main-sidebar">
+
+        <div class="sidebar-heading">
+            WORKSPACE
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a
+                href="/dashboard?section=overview"
+                class="nav-item">
+
+                <span class="nav-icon">⌂</span>
+                <span>Overview</span>
+
+            </a>
+
+
+            <a
+                href="/chat"
+                class="nav-item active">
+
+                <span class="nav-icon">✦</span>
+                <span>Gemini Chat</span>
+
+            </a>
+
+
+            <a
+                href="/dashboard?section=journals"
+                class="nav-item">
+
+                <span class="nav-icon">📔</span>
+                <span>Journals</span>
+
+            </a>
+
+
+            <a
+                href="/dashboard?section=calendar"
+                class="nav-item">
+
+                <span class="nav-icon">📅</span>
+                <span>Calendar</span>
+
+            </a>
+
+
+            <a
+                href="/dashboard?section=goals"
+                class="nav-item">
+
+                <span class="nav-icon">🎯</span>
+                <span>Goals</span>
+
+            </a>
+
+
+            <a
+                href="/dashboard?section=analytics"
+                class="nav-item">
+
+                <span class="nav-icon">▥</span>
+                <span>Analytics</span>
+
+            </a>
+
+
+            <a
+                href="/dashboard?section=insights"
+                class="nav-item">
+
+                <span class="nav-icon">💡</span>
+                <span>AI Insights</span>
+
+            </a>
+
+
+            <a
+                href="/dashboard?section=decisionlens"
+                class="nav-item">
+
+                <span class="nav-icon">⌕</span>
+                <span>DecisionLens</span>
+
+            </a>
+
+
+            <a
+                href="/dashboard?section=bookmarks"
+                class="nav-item">
+
+                <span class="nav-icon">🔖</span>
+                <span>Bookmarks</span>
+
+            </a>
+
+
+            <a
+                href="/dashboard?section=search"
+                class="nav-item">
+
+                <span class="nav-icon">⌕</span>
+                <span>Search</span>
+
+            </a>
+
+
+            <a
+                href="/dashboard?section=summaries"
+                class="nav-item">
+
+                <span class="nav-icon">▤</span>
+                <span>Summaries</span>
+
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-footer">
+
+            <div class="privacy-card">
+
+                <span class="privacy-icon">
+                    🔒
+                </span>
+
+                <div>
+
+                    <strong>
+                        Private workspace
+                    </strong>
+
+                    <p>
+                        Your data stays tied
+                        to your account.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+
+
+
+    <main class="chat-app">
+
+
+        <!-- HEADER -->
+
+        <header class="chat-header">
+
+            <div class="chat-header-left">
+
+
+
+                <div>
+
+                    <h1>
+                        Chat with Gemini in My Journal
+                        <span class="title-sparkle">✦</span>
+                    </h1>
+
+                    <p>
+                        Get AI-powered insights and suggestions about your journal entries.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="chat-header-right">
+
+                <button
+                    id="new-entry"
+                    type="button"
+                    class="new-entry-button"
+                >
+                    ＋ New Chat
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- MAIN CHAT WORKSPACE -->
+
+        <div class="chat-workspace">
+
+
+            <!-- CHAT HISTORY -->
+
+            <aside
+                class="conversation-history-panel"
+                aria-label="Chat history"
+            >
+
+                <div class="conversation-history-header">
+
+                    <div>
+
+                        <span class="history-eyebrow">
+                            CONVERSATIONS
+                        </span>
+
+                        <h2>
+                            Chat History
+                        </h2>
+
+                    </div>
+
+
+                    <button
+                        id="history-new-chat"
+                        type="button"
+                        class="history-new-button"
+                        aria-label="Start a new chat"
+                    >
+                        ＋
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="conversation-history"
+                    class="conversation-history-list"
+                >
+
+                    <div class="history-placeholder">
+                        Loading conversations…
+                    </div>
+
+                </div>
+
+
+                <div class="history-footer">
+
+                    <span>
+                        Your previous conversations are saved automatically.
+                    </span>
+
+                </div>
+
+            </aside>
+
+
+            <!-- ACTIVE CONVERSATION -->
+
+            <section class="chat-column">
+
+
+                <div
+                    id="chat-messages"
+                    class="chat-messages"
+                    aria-live="polite"
+                >
+
+                    <div class="empty-state">
+
+                        <div class="empty-icon">
+                            ✦
+                        </div>
+
+                        <h2>
+                            What would you like to think through?
+                        </h2>
+
+                        <p>
+                            Ask about your journal entries,
+                            brainstorm ideas, reflect on your
+                            progress, or plan your next step.
+                        </p>
+
+
+                        <div class="chat-suggestions">
+
+                            <button
+                                type="button"
+                                data-prompt="Help me reflect on the themes across my recent journal entries."
+                            >
+                                Reflect on my journal
+                            </button>
+
+                            <button
+                                type="button"
+                                data-prompt="What patterns do you notice in my goals and progress?"
+                            >
+                                Find patterns
+                            </button>
+
+                            <button
+                                type="button"
+                                data-prompt="Help me decide the best next step for my current project."
+                            >
+                                Plan my next step
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- COMPOSER -->
+
+                <footer class="chat-composer">
+
+                    <form
+                        id="chat-form"
+                        class="chat-input-area"
+                    >
+
+                        <textarea
+                            id="chat-input"
+                            rows="2"
+                            maxlength="10000"
+                            placeholder="Ask anything about your journal..."
+                            autocomplete="off"
+                            required
+                        ></textarea>
+
+
+                        <div class="composer-actions">
+
+
+                            <div class="composer-tools">
+
+                                <button
+                                    id="attach-entry"
+                                    type="button"
+                                    class="tool-button"
+                                >
+                                    ⌕
+                                    <span>Attach entry</span>
+                                </button>
+
+
+                                <button
+                                    id="add-context"
+                                    type="button"
+                                    class="tool-button"
+                                >
+                                    ▣
+                                    <span>Add context</span>
+                                </button>
+
+                            </div>
+
+
+                            <button
+                                id="send-message"
+                                type="submit"
+                                class="send-button"
+                                aria-label="Send message"
+                            >
+                                ➤
+                            </button>
+
+                        </div>
+
+                    </form>
+
+
+                    <div class="composer-footer">
+
+                        Gemini may make mistakes.
+                        Please verify important information.
+
+                    </div>
+
+                </footer>
+
+            </section>
+
+
+            <!-- CONVERSATION INSIGHTS -->
+
+            <aside
+                class="chat-insights-panel"
+                aria-label="Conversation insights"
+            >
+
+                <div class="intelligence-panel-scroll">
+
+
+                    <!-- ABOUT -->
+
+                    <section
+                        class="intelligence-section about-section"
+                    >
+
+                        <h2>
+                            About this conversation
+                        </h2>
+
+
+                        <div class="conversation-meta">
+
+                            <div>
+
+                                <span class="meta-icon">
+                                    ◉
+                                </span>
+
+                                <div>
+
+                                    <strong>
+                                        Conversation started
+                                    </strong>
+
+                                    <small
+                                        id="conversation-started"
+                                    >
+                                        —
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+
+                            <div>
+
+                                <span class="meta-icon">
+                                    ◌
+                                </span>
+
+                                <div>
+
+                                    <strong
+                                        id="message-count"
+                                    >
+                                        0 messages
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- AI SUMMARY -->
+
+                    <section
+                        class="intelligence-section ai-summary-card"
+                    >
+
+                        <h2>
+                            AI Summary
+                        </h2>
+
+
+                        <p
+                            id="conversation-summary"
+                            class="summary-text"
+                        >
+                            Start a conversation and Gemini will help surface
+                            the main ideas discussed here.
+                        </p>
+
+
+                        <h3>
+                            Key Topics
+                        </h3>
+
+
+                        <div
+                            id="topic-chips"
+                            class="topic-chips"
+                        >
+
+                            <span class="topic-empty">
+                                Topics will appear here
+                            </span>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- ACTIONS -->
+
+                    <section
+                        class="intelligence-section suggested-section"
+                    >
+
+                        <h2>
+                            Suggested Actions
+                        </h2>
+
+
+                        <div class="suggested-actions">
+
+
+                            <button
+                                id="action-new-entry"
+                                type="button"
+                            >
+                                <span>＋</span>
+                                Start a new chat
+                            </button>
+
+
+                            <button
+                                id="save-key-insights"
+                                type="button"
+                            >
+                                <span>🔖</span>
+                                Save key insights
+                            </button>
+
+
+                            <button
+                                id="action-related"
+                                type="button"
+                            >
+                                <span>▣</span>
+                                Attach journal context
+                            </button>
+
+                        </div>
+
+                    </section>
+
+
+                </div>
+
+            </aside>
+
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- ATTACH JOURNAL ENTRY -->
+
+<div
+    id="attach-modal"
+    class="attach-modal"
+    hidden
+>
+
+    <div
+        class="attach-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="attach-title"
+    >
+
+        <div class="attach-dialog-header">
+
+            <div>
+
+                <span class="eyebrow">
+                    JOURNAL CONTEXT
+                </span>
+
+                <h2 id="attach-title">
+                    Attach a journal entry
+                </h2>
+
+            </div>
+
+
+            <button
+                id="close-attach-modal"
+                type="button"
+                class="close-modal"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div
+            id="attach-entry-list"
+            class="attach-entry-list"
+        ></div>
+
+    </div>
+
+</div>
+
+
+<script
+    type="module"
+    src="/static/js/chat.js?v=chat-history-layout-20260903"
+></script>
+
+</body>
+</html>

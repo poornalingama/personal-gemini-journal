@@ -1,0 +1,351 @@
+/* ============================================================
+   DecisionLens Final UI Polish
+   Decision Tools + Agent Insights
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   DECISION TOOLS
+   ------------------------------------------------------------ */
+
+.dl-tools-final,
+.dl-tools-final .dl-tools-grid {
+    width: 100%;
+}
+
+.dl-tools-final {
+    margin-top: 18px;
+    padding: 14px 14px 12px;
+    border: 1px solid #e4e6ef;
+    border-radius: 12px;
+    background: #fff;
+    box-sizing: border-box;
+}
+
+.dl-tools-final .dl-tools-label {
+    margin: 0 0 10px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .06em;
+    color: #3d4285;
+    text-transform: uppercase;
+}
+
+.dl-tools-final .dl-tools-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+}
+
+.dl-tools-final .dl-tool-card {
+    min-height: 92px !important;
+    margin: 0 !important;
+    padding: 16px 18px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    gap: 16px !important;
+
+    border: 1px solid #dde1ea !important;
+    border-radius: 10px !important;
+    background: #fff !important;
+
+    box-sizing: border-box !important;
+    cursor: pointer;
+    text-align: left;
+
+    transition:
+        border-color .18s ease,
+        box-shadow .18s ease,
+        transform .18s ease;
+}
+
+.dl-tools-final .dl-tool-card:hover {
+    border-color: #7764d8 !important;
+    box-shadow: 0 6px 18px rgba(63, 49, 150, .08);
+    transform: translateY(-1px);
+}
+
+.dl-tools-final .dl-tool-icon {
+    flex: 0 0 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #4934b8 !important;
+
+    font-size: 32px !important;
+    line-height: 1;
+}
+
+.dl-tools-final .dl-tool-copy {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.dl-tools-final .dl-tool-title {
+    margin: 0 !important;
+
+    color: #252a3a !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    line-height: 1.25 !important;
+}
+
+.dl-tools-final .dl-tool-description {
+    margin: 0 !important;
+
+    color: #4e5565 !important;
+    font-size: 13px !important;
+    line-height: 1.45 !important;
+}
+
+/* ------------------------------------------------------------
+   AGENT INSIGHTS
+   ------------------------------------------------------------ */
+
+.dl-agent-insights-final {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.dl-agent-insights-final .dl-agent-insights-header {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) auto auto !important;
+    align-items: start !important;
+    gap: 18px !important;
+
+    margin-bottom: 14px !important;
+}
+
+.dl-agent-insights-final .dl-agent-title-block {
+    min-width: 0;
+}
+
+.dl-agent-insights-final .dl-agent-heading {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+
+    margin: 0 0 5px !important;
+
+    color: #252a3a !important;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+}
+
+.dl-agent-insights-final .dl-agent-info {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 18px;
+    height: 18px;
+
+    border: 1px solid #8b90a0;
+    border-radius: 50%;
+
+    color: #555b6b;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.dl-agent-insights-final .dl-agent-subtitle {
+    margin: 0 !important;
+
+    color: #687080 !important;
+    font-size: 13px !important;
+    line-height: 1.45 !important;
+}
+
+.dl-agent-insights-final .dl-confirm-count {
+    align-self: center;
+    white-space: nowrap;
+
+    color: #4a38a9 !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+}
+
+.dl-agent-insights-final .dl-rerun-button {
+    align-self: center;
+
+    min-height: 42px;
+    padding: 0 17px !important;
+
+    border: 1px solid #d8d1f5 !important;
+    border-radius: 9px !important;
+
+    background: #fff !important;
+    color: #4934b8 !important;
+
+    font-weight: 700 !important;
+}
+
+/* Insight list */
+
+.dl-agent-insights-final .dl-insight-list {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+
+    width: 100%;
+}
+
+/* Individual insight row */
+
+.dl-agent-insights-final .dl-insight-row {
+    width: 100% !important;
+    min-height: 88px !important;
+
+    display: grid !important;
+    grid-template-columns: 56px minmax(0, 1fr) auto !important;
+    align-items: center !important;
+    gap: 14px !important;
+
+    padding: 14px 18px !important;
+
+    border: 1px solid #e0e3ea !important;
+    border-radius: 12px !important;
+
+    background: #fff !important;
+
+    box-sizing: border-box !important;
+}
+
+/* Question mark */
+
+.dl-agent-insights-final .dl-insight-icon {
+    width: 40px !important;
+    height: 40px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    border-radius: 50% !important;
+
+    background: #f2efff !important;
+    color: #5b43c8 !important;
+
+    font-size: 22px !important;
+    font-weight: 600 !important;
+}
+
+/* Text */
+
+.dl-agent-insights-final .dl-insight-copy {
+    min-width: 0 !important;
+}
+
+.dl-agent-insights-final .dl-insight-text {
+    color: #303545 !important;
+
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    line-height: 1.45 !important;
+}
+
+/* Confirmed state */
+
+.dl-agent-insights-final .dl-insight-row.is-confirmed {
+    background: #fbfefc !important;
+    border-color: #dceee4 !important;
+}
+
+.dl-agent-insights-final .dl-insight-row.is-confirmed .dl-insight-icon {
+    border-radius: 10px !important;
+
+    background: #f1fbf5 !important;
+    border: 1px solid #9fd7b2 !important;
+
+    color: #16864a !important;
+}
+
+.dl-agent-insights-final .dl-confirmed-state {
+    min-width: 138px;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 9px !important;
+
+    color: #16864a !important;
+
+    font-size: 14px !important;
+    font-weight: 700 !important;
+}
+
+.dl-agent-insights-final .dl-confirmed-check {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #9fd7b2;
+    border-radius: 10px;
+
+    color: #16864a;
+    background: #f1fbf5;
+
+    font-size: 20px;
+}
+
+/* Unconfirmed button */
+
+.dl-agent-insights-final .dl-confirm-button {
+    min-width: 122px !important;
+    min-height: 42px !important;
+
+    padding: 0 18px !important;
+
+    border: 1px solid #d5cffa !important;
+    border-radius: 9px !important;
+
+    background: #fff !important;
+    color: #4a38a9 !important;
+
+    font-size: 14px !important;
+    font-weight: 700 !important;
+}
+
+/* Hide decorative chevrons introduced by previous UI adapters */
+
+.dl-agent-insights-final .dl-remove-chevron {
+    display: none !important;
+}
+
+/* ------------------------------------------------------------
+   RESPONSIVE
+   ------------------------------------------------------------ */
+
+@media (max-width: 1180px) {
+    .dl-tools-final .dl-tools-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+}
+
+@media (max-width: 760px) {
+    .dl-tools-final .dl-tools-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .dl-agent-insights-final .dl-agent-insights-header {
+        grid-template-columns: 1fr !important;
+        gap: 10px !important;
+    }
+
+    .dl-agent-insights-final .dl-insight-row {
+        grid-template-columns: 44px minmax(0, 1fr) !important;
+    }
+
+    .dl-agent-insights-final .dl-confirm-button,
+    .dl-agent-insights-final .dl-confirmed-state {
+        grid-column: 2;
+        justify-self: start;
+    }
+}

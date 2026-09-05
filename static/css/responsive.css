@@ -1,0 +1,145 @@
+@media (max-width: 1100px) {
+
+    .application-layout {
+        grid-template-columns: 210px minmax(0, 1fr);
+    }
+
+    .main-content {
+        padding-left: 28px;
+        padding-right: 28px;
+    }
+
+    .feature-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 800px) {
+
+    .topbar {
+        height: auto;
+        min-height: 70px;
+        padding: 12px 16px;
+    }
+
+    .brand-copy span,
+    .user-info {
+        display: none;
+    }
+
+    .application-layout {
+        display: block;
+    }
+
+    .sidebar {
+        position: sticky;
+        top: 70px;
+        z-index: 80;
+        width: 100%;
+        height: auto;
+        padding: 8px 10px;
+        border-right: 0;
+        border-bottom: 1px solid var(--border);
+        overflow-x: auto;
+    }
+
+    .sidebar-heading,
+    .sidebar-footer {
+        display: none;
+    }
+
+    .sidebar-nav {
+        flex-direction: row;
+        width: max-content;
+    }
+
+    .nav-item {
+        width: auto;
+        min-width: 105px;
+        justify-content: center;
+    }
+
+    .main-content {
+        padding: 28px 18px 50px;
+    }
+
+    .nav-item:hover {
+        transform: none;
+    }
+
+    .journal-editor-card {
+        min-height: 500px;
+    }
+}
+
+@media (max-width: 520px) {
+
+    .topbar-actions {
+        gap: 7px;
+    }
+
+    .logout-button {
+        padding: 8px 10px;
+        font-size: 11px;
+    }
+
+    .brand-mark {
+        width: 37px;
+        height: 37px;
+    }
+
+    .brand-copy h1 {
+        font-size: 14px;
+    }
+
+    .nav-item {
+        min-width: 88px;
+        padding: 8px 9px;
+        font-size: 11px;
+    }
+
+    .nav-icon {
+        width: auto;
+        font-size: 14px;
+    }
+
+    .page-header h2 {
+        font-size: 28px;
+    }
+
+    .hero-panel {
+        min-height: 300px;
+        padding: 25px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-actions button {
+        width: 100%;
+    }
+
+    .journal-editor-card {
+        padding: 19px;
+    }
+
+    .journal-editor-footer {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .journal-editor-footer button {
+        width: 100%;
+    }
+
+    .journal-analysis {
+        padding: 10px;
+    }
+
+    .journal-analysis-dialog {
+        max-height: calc(100vh - 20px);
+        border-radius: 16px;
+    }
+}

@@ -1,0 +1,105 @@
+/*
+ * Personal Gemini Journal
+ * Dashboard-specific compatibility layer.
+ */
+
+.dashboard-page {
+    background: #f6f7fb;
+}
+
+#calendar-list .feature-card,
+#goal-list .feature-card,
+#bookmark-list .feature-card,
+#search-results .feature-card {
+    min-height: auto;
+}
+
+#calendar-list .feature-card > div,
+#bookmark-list .feature-card > div {
+    color: #727b8f;
+    line-height: 1.6;
+    font-size: 13px;
+}
+
+#calendar-list .feature-card button,
+#goal-list .feature-card button,
+#bookmark-list .feature-card button {
+    margin-top: 12px;
+}
+
+#analytics-data .stat-card {
+    min-height: 120px;
+}
+
+#analytics-data .stat-card strong {
+    word-break: break-word;
+}
+
+#analytics-data .stat-card span {
+    color: #172033;
+}
+
+#summary-form {
+    display: flex;
+    justify-content: flex-end;
+}
+
+@media (max-width: 900px) {
+
+    .feature-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .overview-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .journal-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .journal-list {
+        max-height: 300px;
+    }
+}
+
+@media (max-width: 640px) {
+
+    .feature-grid,
+    .overview-lower-grid,
+    .overview-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .page-header-with-action {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .hero-panel {
+        padding: 28px;
+    }
+
+    .hero-orbit {
+        display: none;
+    }
+
+    .ai-action-panel {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .form-grid,
+    .search-panel {
+        grid-template-columns: 1fr;
+    }
+
+    #summary-form {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    #summary-form button {
+        width: 100%;
+    }
+}
